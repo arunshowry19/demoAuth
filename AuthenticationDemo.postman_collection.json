@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "43902672-2515-4365-a9f2-04e2d22abc32",
+		"name": "AuthenticationDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"INR: 72.88388914\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "791e47410cd788ab59cca403671f76eb",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.currencyscoop.com/v1/latest?base=USD",
+					"protocol": "https",
+					"host": [
+						"api",
+						"currencyscoop",
+						"com"
+					],
+					"path": [
+						"v1",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "base",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth 2.0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "EDHnvwMBtdquj1iNAMh7GlGkUopLbyg62oEivh1Djk6k27P5eo4XSktWrddUu-F4Cm7avcwm0K28Zifl",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "AetxwcvyNdgYEImABB0auBHX_norzxLzkYdcLesCAv6Of8ZWXx5ADzfJqEASY3wr9XhqRIXhgWRxsiE4",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "paypal token",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/catalogs/products",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"catalogs",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth 2.0 Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "EDHnvwMBtdquj1iNAMh7GlGkUopLbyg62oEivh1Djk6k27P5eo4XSktWrddUu-F4Cm7avcwm0K28Zifl",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "AetxwcvyNdgYEImABB0auBHX_norzxLzkYdcLesCAv6Of8ZWXx5ADzfJqEASY3wr9XhqRIXhgWRxsiE4",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "paypal token",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/catalogs/products",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"catalogs",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BasicAuthentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://the-internet.herokuapp.com",
+					"protocol": "https",
+					"host": [
+						"the-internet",
+						"herokuapp",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.get(\"variable_key\");",
+					"pm.globals.get(\"variable_key\");",
+					"pm.variables.get(\"variable_key\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// The opts for the server, also includes the data to be written to file",
+					"let opts = {",
+					"    requestName: request.name || request.url,",
+					"    fileExtension: 'json',",
+					"    mode: 'writeFile', // Change this to any function of the fs library of node to use it.",
+					"    uniqueIdentifier: false,",
+					"    responseData: pm.response.text()",
+					"};",
+					"",
+					"pm.sendRequest({",
+					"    url: 'http://localhost:3000/write',",
+					"    method: 'POST',",
+					"    header: 'Content-Type:application/json',",
+					"    body: {",
+					"        mode: 'raw',",
+					"        raw: JSON.stringify(opts)",
+					"    }",
+					"}, function (err, res) {",
+					"    console.log(res);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api-m.sandbox.paypal.com"
+		}
+	]
+}
